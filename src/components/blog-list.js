@@ -24,7 +24,7 @@ const Item = ({image, link, title, date, description}) => {
 export default() => {
     const query = useStaticQuery(graphql `
         query {
-            allMarkdownRemark {
+            allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
                 edges {
                     node {
                         id
